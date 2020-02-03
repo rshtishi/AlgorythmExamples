@@ -1,6 +1,7 @@
 package al.tirana.arrays;
 
 import static org.junit.Assert.assertArrayEquals;
+import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
@@ -32,12 +33,45 @@ public class ArrayUtilTest {
 	@Test
 	public void testfindMaxAndMinNumbers() {
 		// setup
-		int[] numbers = new int[] { -2, 14, 21, -8, 12};
-		//execute
+		int[] numbers = new int[] { -2, 14, 21, -8, 12 };
+		// execute
 		int[] extremesArr = ArrayUtil.findMaxAndMinNumbers(numbers);
-		//verify
-		int[] expected = new int[] { 21, -8};
+		// verify
+		int[] expected = new int[] { 21, -8 };
 		assertArrayEquals(expected, extremesArr);
+	}
+
+	@Test
+	public void testReverseArray() {
+		// setup
+		int[] numbers = new int[] { 1, 10, 100, 1000, 10000 };
+		// execute
+		int[] reversedNumbers = ArrayUtil.reverseArray(numbers);
+		//
+		int[] expectedNumbers = new int[] { 10000, 1000, 100, 10, 1 };
+		assertArrayEquals(expectedNumbers, reversedNumbers);
+	}
+
+	@Test
+	public void testSearchNumber() {
+		// setup
+		int[] numbers = new int[] { 1, 3, 55, 8, 22, 9 };
+		// execute
+		int numberPos = ArrayUtil.searchNumber(numbers, 55);
+		// verify
+		int expected = 2;
+		assertEquals(expected, numberPos);
+	}
+
+	@Test
+	public void testSortArray() {
+		// setup
+		int[] numbers = new int[] { 1, 5, 6, 0, 2 };
+		// execute
+		int[] sortedNumbers = ArrayUtil.sortArray(numbers);
+		// verify
+		int[] expectedNumbers = new int[] { 0, 1, 2, 5, 6 };
+		assertArrayEquals(expectedNumbers, sortedNumbers);
 	}
 
 }

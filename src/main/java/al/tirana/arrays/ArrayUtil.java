@@ -57,6 +57,37 @@ public class ArrayUtil {
 		extremeArr[1] = minNum;
 		return extremeArr;
 	}
+
+	public static int[] reverseArray(int[] numbers) {
+		for (int i = 0; i < numbers.length / 2; i++) {
+			int temp = numbers[i];
+			int j = numbers.length - 1 - i;
+			numbers[i] = numbers[j];
+			numbers[j] = temp;
+		}
+		return numbers;
+	}
 	
+	public static int searchNumber(int[] numbers,int number) {
+		for(int i=0; i<numbers.length; i++) {
+			if(numbers[i]==number) {
+				return i;
+			}
+		}
+		return -1;
+	}
+
+	public static int[] sortArray(int[] numbers) {
+		for (int i = 0; i < numbers.length; i++) {
+			for (int j = i + 1; j < numbers.length ; j++) {
+				if (numbers[i] > numbers[j]) {
+					int temp = numbers[i];
+					numbers[i] = numbers[j];
+					numbers[j] = temp;
+				}
+			}
+		}
+		return numbers;
+	}
 
 }
