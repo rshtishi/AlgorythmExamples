@@ -2,6 +2,7 @@ package al.tirana.arrays;
 
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
@@ -61,6 +62,17 @@ public class ArrayUtilTest {
 		// verify
 		int expected = 2;
 		assertEquals(expected, numberPos);
+	}
+	
+	@Test
+	public void testBinarySearchNumber() {
+		// setup
+		int[] numbers = new int[] { 1, 3, 55, 8, 22, 9, 11, 0 };
+		// execute
+		boolean found = ArrayUtil.binarySearchNumber(numbers, 8);
+		//verify
+		assertTrue(found);
+
 	}
 
 	@Test

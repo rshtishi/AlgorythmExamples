@@ -76,6 +76,23 @@ public class ArrayUtil {
 		}
 		return -1;
 	}
+	
+	public static boolean binarySearchNumber(int[] numbers, int number) {
+		Arrays.sort(numbers);
+		int lowIndex = 0;
+		int highIndex = numbers.length;
+		while(lowIndex<=highIndex) {
+			int midIndex = (lowIndex+highIndex)/2;
+			if(numbers[midIndex]==number) {
+				return true;
+			} else if(numbers[midIndex]<number) {
+				lowIndex= midIndex+1;
+			} else if(numbers[midIndex]>number) {
+				highIndex = midIndex-1;
+			}
+		}
+		return false;
+	}
 
 	public static int[] sortArray(int[] numbers) {
 		for (int i = 0; i < numbers.length; i++) {
