@@ -65,14 +65,14 @@ public class ArrayUtilTest {
 		int expected = 2;
 		assertEquals(expected, numberPos);
 	}
-	
+
 	@Test
 	public void testBinarySearchNumber() {
 		// setup
 		int[] numbers = new int[] { 1, 3, 55, 8, 22, 9, 11, 0 };
 		// execute
 		boolean found = ArrayUtil.binarySearchNumber(numbers, 8);
-		//verify
+		// verify
 		assertTrue(found);
 
 	}
@@ -86,6 +86,17 @@ public class ArrayUtilTest {
 		// verify
 		int[] expectedNumbers = new int[] { 0, 1, 2, 5, 6 };
 		assertArrayEquals(expectedNumbers, sortedNumbers);
+	}
+
+	@Test
+	public void testMergeSort() {
+		// setup
+		int[] numbers = new int[] { 1, 3, 4, 5, 2, 8 };
+		// execute
+		ArrayUtil.mergeSort(numbers, 0, numbers.length - 1);
+		// verify
+		int[] expectedNumbers = new int[] { 1, 2, 3, 4, 5, 8 };
+		assertArrayEquals(expectedNumbers, numbers);
 	}
 
 }
