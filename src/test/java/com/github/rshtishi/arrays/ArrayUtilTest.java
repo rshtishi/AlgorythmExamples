@@ -102,7 +102,7 @@ public class ArrayUtilTest {
 	@Test
 	public void maxSubArraySum() {
 		// setup
-		int[] numbers = new int[] { -2, 3, 5, -5, 7, 0, 6 };
+		int[] numbers = new int[] { -2, 3, 5, -5, 7, 0 };
 		// execute
 		int maxSubArraySum = ArrayUtil.findMaxSubArraySum(numbers, 0, numbers.length - 1);
 		// verify
