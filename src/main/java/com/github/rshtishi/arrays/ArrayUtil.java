@@ -116,13 +116,13 @@ public class ArrayUtil {
 		}
 	}
 
-	public static void merge(int[] A, int p, int q, int r) {
+	private static void merge(int[] A, int p, int q, int r) {
 		int n1 = q - p + 1;
 		int n2 = r - q;
 		int[] L = new int[n1];
 		int[] R = new int[n2];
 		for (int i = 0; i < n1; i++) {
-			L[i] = A[p+i];
+			L[i] = A[p + i];
 		}
 		for (int i = 0; i < n2; i++) {
 			R[i] = A[q + i + 1];
@@ -151,6 +151,36 @@ public class ArrayUtil {
 			j++;
 			k++;
 		}
+	}
+
+	public static int findMaxSubArraySum(int A[], int p, int r) {
+		if (p == r) {
+			return A[p];
+		}
+		int q = (p + r) / 2;
+		return Math.max(Math.max(findMaxSubArraySum(A, p, q), findMaxSubArraySum(A, q + 1, r)), findMaxCrossingSum(A, p, q, r));
+	}
+
+	private static int findMaxCrossingSum(int A[], int p, int q, int r) {
+		int sum = 0;
+		int leftSum = Integer.MIN_VALUE;
+		for (int i = p; i <= q; i++) {
+			sum = sum + A[i];
+			if (sum > leftSum) {
+				leftSum = sum;
+			}
+		}
+
+		sum = 0;
+		int rightSum = Integer.MIN_VALUE;
+		for (int i = q + 1; i <= r; i++) {
+			sum = sum + A[i];
+			if (sum > rightSum) {
+				rightSum = sum;
+			}
+		}
+		sum=leftSum+rightSum;
+		return Math.max(sum,Math.max(leftSum,rightSum));
 	}
 
 }
