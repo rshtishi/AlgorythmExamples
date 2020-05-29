@@ -66,6 +66,28 @@ public class TriangleTest {
 		String expected = "***\n **\n  *\n";
 		assertEquals(expected,outContent.toString());
 	}
+	
+	@Test
+	public void testPrintIsosceles() {
+		//setup
+		int n=3;
+		//execute
+		Triangle.printTopIsosceles(n);
+		//verify
+		String expected = "  *\n ***\n*****\n";
+		assertEquals(expected,outContent.toString());
+	}
+	
+	@Test
+	public void testPrintBottomIsosceles() {
+		//setup
+		int n=3;
+		//execute
+		Triangle.printBottomIsosceles(n);
+		//verify
+		String expected = "*****\n ***\n  *\n";
+		assertEquals(expected,outContent.toString());
+	}
 
 
 	@After
