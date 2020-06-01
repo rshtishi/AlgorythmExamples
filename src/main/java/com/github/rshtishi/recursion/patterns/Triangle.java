@@ -50,9 +50,28 @@ public class Triangle {
 	
 	public static void printTopIsosceles(int n, int index) {
 		if (index > 1) {
-			printBottomRight(n, index - 1);
+			printTopIsosceles(n, index - 1);
 		}
-		
+		for(int i=0;i<n-index;i++) {
+			System.out.print(" ");
+		}
+		for(int i=0;i<2*index-1;i++) {
+			System.out.print("*");
+		}
+		System.out.println();
+	}
+	
+	public static void printBottomIsosceles(int n, int index) {
+		if(index > 1) {
+			printBottomIsosceles(n, index-1);
+		}
+		for(int i=1;i<index;i++) {
+			System.out.print(" ");
+		}
+		for(int i=0;i<2*n-2*(index-1)-1;i++) {
+			System.out.print("*");
+		}
+		System.out.println();
 	}
 
 }

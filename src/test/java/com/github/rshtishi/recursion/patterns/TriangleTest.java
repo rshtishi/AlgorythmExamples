@@ -18,7 +18,7 @@ public class TriangleTest {
 		// setup
 		int n = 3;
 		// execute
-		Triangle.printTopRight(n,n);
+		Triangle.printTopRight(n, n);
 		// verify
 	}
 
@@ -30,21 +30,31 @@ public class TriangleTest {
 		Triangle.printBottomLeft(n);
 		// verify
 	}
-	
+
 	@Test
 	public void testPrintBottomRight() {
-		//setup
-		int n=3;
-		//execute
+		// setup
+		int n = 3;
+		// execute
 		Triangle.printBottomRight(n, n);
-		//verify
+		// verify
+	}
+
+	@Test
+	public void testPrintTopIsosceles() {
+		// setup
+		int n = 3;
+		// execute
+		Triangle.printTopIsosceles(n, n);
+		// verify
 	}
 	
 	@Test
-	public void testPrintTopIsosceles() {
+	public void printBottomIsosceles() {
 		//setup
+		int n = 3;
 		//execute
-		//verify
+		Triangle.printBottomIsosceles(n, n);
 	}
 
 }
