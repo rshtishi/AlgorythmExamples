@@ -27,10 +27,10 @@ public class TriangleTest {
 	public void testPrintTopLeft() {
 		// setup
 		int n = 3;
+		String expected = "*\n**\n***\n";
 		// execute
 		Triangle.printTopLeft(n);
 		// verify
-		String expected = "*\n**\n***\n";
 		assertEquals(expected, outContent.toString());
 	}
 	
@@ -38,10 +38,10 @@ public class TriangleTest {
 	public void testPrintTopRight() throws IOException {
 		//setup
 		int n = 3;
+		String expected = "  *\n **\n***\n";
 		// execute
 		Triangle.printTopRight(n);
 		// verify
-		String expected = "  *\n **\n***\n";
 		assertEquals(expected, outContent.toString());
 	}
 	
@@ -49,10 +49,10 @@ public class TriangleTest {
 	public void testPrintBottomLeft() {
 		//setup
 		int n = 3;
+		String expected = "***\n**\n*\n";
 		//execute
 		Triangle.printBottomLeft(n);
 		//verify
-		String expected = "***\n**\n*\n";
 		assertEquals(expected,outContent.toString());
 	}
 	
@@ -60,10 +60,10 @@ public class TriangleTest {
 	public void testPrintBottomRight() {
 		//setup
 		int n = 3;
+		String expected = "***\n **\n  *\n";
 		//execute
 		Triangle.printBottomRight(n);
 		//verify
-		String expected = "***\n **\n  *\n";
 		assertEquals(expected,outContent.toString());
 	}
 	
@@ -71,10 +71,10 @@ public class TriangleTest {
 	public void testPrintIsosceles() {
 		//setup
 		int n=3;
+		String expected = "  *\n ***\n*****\n";
 		//execute
 		Triangle.printTopIsosceles(n);
 		//verify
-		String expected = "  *\n ***\n*****\n";
 		assertEquals(expected,outContent.toString());
 	}
 	
@@ -82,10 +82,10 @@ public class TriangleTest {
 	public void testPrintBottomIsosceles() {
 		//setup
 		int n=3;
+		String expected = "*****\n ***\n  *\n";
 		//execute
 		Triangle.printBottomIsosceles(n);
 		//verify
-		String expected = "*****\n ***\n  *\n";
 		assertEquals(expected,outContent.toString());
 	}
 
