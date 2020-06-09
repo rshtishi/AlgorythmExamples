@@ -7,12 +7,12 @@ public class InsertionSortTest {
 
 	@Test
 	public void test() {
-		//setup
+		// setup
 		int[] actual = { 1, -1, 4, 5, -3, 0 };
 		int[] expected = { -3, -1, 0, 1, 4, 5 };
-		//execute
-		InsertionSort.sort(actual,actual.length-1);
-		//verify
+		// execute
+		InsertionSort.sort(actual, actual.length - 1);
+		// verify
 		Assert.assertArrayEquals(expected, actual);
 	}
 

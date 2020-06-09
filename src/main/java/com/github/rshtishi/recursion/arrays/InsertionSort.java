@@ -7,16 +7,12 @@ public class InsertionSort {
 			sort(A, size - 1);
 		}
 		int key = A[size];
-		int index = 0;
-		while (index < size) {
-			if (A[index] > key) {
-				int tmp = key;
-				key = A[index];
-				A[index] = tmp;
-			}
-			index++;
+		int index = size - 1;
+		while (index >= 0 && A[index] >= key) {
+			A[index + 1] = A[index];
+			index--;
 		}
-		A[index] = key;
+		A[index + 1] = key;
 	}
 
 }
