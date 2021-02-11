@@ -2,7 +2,7 @@ package com.github.rshtishi.recursion;
 
 public class Fibonacci {
 	
-	public static int compute(int n) {
+	public static long compute(int n) {
 		if(n==0) {
 			return 0;
 		}

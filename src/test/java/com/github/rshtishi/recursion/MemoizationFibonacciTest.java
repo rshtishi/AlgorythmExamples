@@ -1,5 +1,7 @@
 package com.github.rshtishi.recursion;
 
+import java.util.HashMap;
+
 import org.fest.assertions.Assertions;
 import org.junit.Ignore;
 import org.junit.Rule;
@@ -11,7 +13,7 @@ import junitparams.JUnitParamsRunner;
 import junitparams.Parameters;
 
 @RunWith(JUnitParamsRunner.class)
-public class FibonacciTest {
+public class MemoizationFibonacciTest {
 
 	@Rule
 	public Timeout globalTimeout = Timeout.seconds(1);
@@ -24,24 +26,23 @@ public class FibonacciTest {
 
 	@Test
 	@Parameters(method = "getTestData")
-	public void shouldComputeCorrectFibonacciValue(int n, int expected) {
-		long computedValue = Fibonacci.compute(n);
+	public void shouldComputeCorrectly(int n, int expected) {
+		long computedValue = MemoizationFibonacci.compute(n, new HashMap<>());
 		Assertions.assertThat(computedValue).isEqualTo(expected);
 	}
 
 	@Test
-	public void shouldComputeCorrectForZero() {
-		int n = 0;
-		int expected = 0;
-		long computedValue = Fibonacci.compute(n);
+	public void shouldComputeCorrectyForZero() {
+		int n = 0, expected = 0;
+		long computedValue = MemoizationFibonacci.compute(n, new HashMap<>());
 		Assertions.assertThat(computedValue).isEqualTo(expected);
 	}
-
+	
 	@Test
-	public void shouldComputeCorrectForBigN() {
+	public void shouldComputeCorrectlyBigN() {
 		int n = 50;
 		long expected = 12586269025L;
-		long computedValue = Fibonacci.compute(n);
+		long computedValue = MemoizationFibonacci.compute(n, new HashMap<>());
 		Assertions.assertThat(computedValue).isEqualTo(expected);
 	}
 
