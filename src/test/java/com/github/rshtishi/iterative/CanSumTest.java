@@ -1,7 +1,5 @@
 package com.github.rshtishi.iterative;
 
-import static org.junit.Assert.*;
-
 import org.fest.assertions.Assertions;
 import org.junit.Rule;
 import org.junit.Test;
