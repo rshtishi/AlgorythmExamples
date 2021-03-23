@@ -2,6 +2,7 @@ package com.github.rshtishi.recursion;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 
 import org.fest.assertions.Assertions;
@@ -14,8 +15,8 @@ import junitparams.JUnitParamsRunner;
 import junitparams.Parameters;
 
 @RunWith(JUnitParamsRunner.class)
-public class HowSumTest {
-
+public class MemoizationHowSumTest {
+	
 	@Rule
 	public Timeout globalTimeout = Timeout.seconds(1);
 
@@ -29,7 +30,8 @@ public class HowSumTest {
 	@Test
 	@Parameters(method = "getTestData")
 	public void shouldComputeCorrect(int num, int[] values, List<Integer> expected) {
-		List<Integer> result =  HowSum.compute(num, values);
+		List<Integer> result =  MemoizationHowSum.compute(num, values, new HashMap<Integer,List<Integer>>());
+		System.out.println(result);
 		Assertions.assertThat(result).isEqualTo(expected);
 	}
 	
@@ -38,7 +40,7 @@ public class HowSumTest {
 		int num =0;
 		int[] values = new int[] {1,2,3,4};
 		List<Integer> expected = new ArrayList<>();
-		List<Integer> result = HowSum.compute(num, values);
+		List<Integer> result = MemoizationHowSum.compute(num, values, new HashMap<Integer,List<Integer>>());
 		Assertions.assertThat(result).isEqualTo(expected);
 	}
 	
@@ -47,8 +49,9 @@ public class HowSumTest {
 		int num = 305;
 		int[] values = {2,8,16};
 		List<Integer> expected = null;
-		List<Integer> result = HowSum.compute(num, values);
+		List<Integer> result = MemoizationHowSum.compute(num, values, new HashMap<Integer,List<Integer>>());
 		Assertions.assertThat(result).isEqualTo(expected);
 	}
+
 
 }
