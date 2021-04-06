@@ -31,7 +31,6 @@ public class MemoizationHowSumTest {
 	@Parameters(method = "getTestData")
 	public void shouldComputeCorrect(int num, int[] values, List<Integer> expected) {
 		List<Integer> result =  MemoizationHowSum.compute(num, values, new HashMap<Integer,List<Integer>>());
-		System.out.println(result);
 		Assertions.assertThat(result).isEqualTo(expected);
 	}
 	
