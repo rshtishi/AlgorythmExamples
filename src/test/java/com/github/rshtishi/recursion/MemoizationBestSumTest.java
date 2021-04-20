@@ -2,6 +2,7 @@ package com.github.rshtishi.recursion;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 
 import org.fest.assertions.Assertions;
@@ -14,7 +15,7 @@ import junitparams.JUnitParamsRunner;
 import junitparams.Parameters;
 
 @RunWith(JUnitParamsRunner.class)
-public class BestSumTest {
+public class MemoizationBestSumTest {
 	
 	@Rule
 	public Timeout globalTimeout = Timeout.seconds(1);
@@ -25,11 +26,11 @@ public class BestSumTest {
 				new Object[] { 10, new int[] { 2, 5 }, Arrays.asList(5,5) },
 				new Object[] { 9, new int[] { 8, 4, 6 }, null } };
 	}
-
+	
 	@Test
 	@Parameters(method = "getTestData")
 	public void shouldComputeCorrect(int num, int[] values, List<Integer> expected) {
-		List<Integer> result =  BestSum.compute(num, values);
+		List<Integer> result =  MemoizationBestSum.compute(num, values,new HashMap<>());
 		Assertions.assertThat(result).isEqualTo(expected);
 	}
 	
@@ -38,7 +39,7 @@ public class BestSumTest {
 		int num =0;
 		int[] values = new int[] {1,2,3,4};
 		List<Integer> expected = new ArrayList<>();
-		List<Integer> result = BestSum.compute(num, values);
+		List<Integer> result = MemoizationBestSum.compute(num, values, new HashMap<>());
 		Assertions.assertThat(result).isEqualTo(expected);
 	}
 	
@@ -47,7 +48,7 @@ public class BestSumTest {
 		int num = 305;
 		int[] values = {2,8,16};
 		List<Integer> expected = null;
-		List<Integer> result = BestSum.compute(num, values);
+		List<Integer> result = MemoizationBestSum.compute(num, values, new HashMap<>());
 		Assertions.assertThat(result).isEqualTo(expected);
 	}
 
