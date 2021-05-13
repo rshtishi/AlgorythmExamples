@@ -33,7 +33,7 @@ public class TabulationHowSumTest {
 	@Test
 	@Parameters(method = "getTestData")
 	public void shouldComputeCorrect(int num, int[] values, List<Integer> expected) {
-		List<Integer> result =  HowSum.compute(num, values);
+		List<Integer> result =  TabulationHowSum.compute(num, values);
 		Assertions.assertThat(result).isEqualTo(expected);
 	}
 	
@@ -42,7 +42,7 @@ public class TabulationHowSumTest {
 		int num =0;
 		int[] values = new int[] {1,2,3,4};
 		List<Integer> expected = new ArrayList<>();
-		List<Integer> result = HowSum.compute(num, values);
+		List<Integer> result = TabulationHowSum.compute(num, values);
 		Assertions.assertThat(result).isEqualTo(expected);
 	}
 	
@@ -51,7 +51,7 @@ public class TabulationHowSumTest {
 		int num = 305;
 		int[] values = {2,8,16};
 		List<Integer> expected = null;
-		List<Integer> result = HowSum.compute(num, values);
+		List<Integer> result = TabulationHowSum.compute(num, values);
 		Assertions.assertThat(result).isEqualTo(expected);
 	}
 
