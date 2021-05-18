@@ -17,9 +17,5 @@ public class CanConstruct {
 		}
 		return false;
 	}
-	
-	public static void main(String[] args) {
-		compute("Tirana",new String[] {"Ti","ran","na","rana"});
-	}
 
 }
