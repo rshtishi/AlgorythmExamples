@@ -17,7 +17,7 @@ public class CanConstructTest {
 	@Rule
 	public Timeout globalTimeout = Timeout.seconds(1);
 
-	public static final Object[] getTestDate() {
+	public static final Object[] getTestData() {
 		return new Object[] { new Object[] { "Rando", new String[] { "Ra", "do", "n", "Rand" }, true },
 				new Object[] { "Rando", new String[] { "o", "do", "n", "Rand" }, true },
 				new Object[] { "Tirana", new String[] { "Ti", "ran", "na", "rana" }, true },
@@ -27,7 +27,7 @@ public class CanConstructTest {
 	}
 
 	@Test
-	@Parameters(method = "getTestDate")
+	@Parameters(method = "getTestData")
 	public void shouldComputeCorrect(String target, String[] wordBank, boolean expected) {
 		boolean result = CanConstruct.compute(target, wordBank);
 		Assertions.assertThat(result).isEqualTo(expected);
