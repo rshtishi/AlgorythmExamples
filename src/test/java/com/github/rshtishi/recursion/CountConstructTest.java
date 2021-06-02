@@ -18,7 +18,7 @@ public class CountConstructTest {
 	public Timeout globalTimeout = Timeout.seconds(1);
 
 	public static final Object[] getTestData() {
-		return new Object[] { new Object[] { "Rando", new String[] { "Ra", "do", "n", "Rand" }, 2 },
+		return new Object[] { new Object[] { "Rando", new String[] { "Ra", "do", "n", "Rand" }, 1 },
 				new Object[] { "Rando", new String[] { "o", "do", "n", "Rand" }, 1 },
 				new Object[] { "Tirana", new String[] { "Ti", "ran", "na", "rana" }, 1 },
 				new Object[] { "Tirana", new String[] { "Tir", "rana", "na", "ir" }, 0 },
@@ -36,7 +36,7 @@ public class CountConstructTest {
 	@Test
 	public void shouldComputeCorrectlyForEmptyStrings() {
 		int result = CountConstruct.compute("", new String[] { "a", "aa", "aab" });
-		int expected = 0;
+		int expected = 1;
 		Assertions.assertThat(result).isEqualTo(expected);
 	}
 	
