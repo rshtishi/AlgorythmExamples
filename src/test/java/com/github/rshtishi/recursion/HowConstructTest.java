@@ -30,7 +30,7 @@ public class HowConstructTest {
 	@Test
 	@Parameters(method = "getTestData")
 	public void test(String target, String[] wordBank,List<String> result) {
-		HowConstruct.compute(target, wordBank);
+		System.out.println(HowConstruct.compute(target, wordBank));
 	}
 
 }
